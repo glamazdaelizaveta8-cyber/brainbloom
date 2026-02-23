@@ -3,11 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BrainBloom — онлайн школа математики (5–11 клас) + НМТ</title>
-  <meta name="description" content="BrainBloom — онлайн школа математики для 5–11 класів. Підготовка до НМТ індивідуально та в мінігрупах." />
+  <title>BrainBloom — онлайн школа математики 5–11 клас • НМТ</title>
+  <meta name="description" content="BrainBloom — онлайн школа математики для 5–11 класів. Підготовка до НМТ: індивідуально 400₴/год або мінігрупи 2–5." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- AOS animations (скрол-анімації) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <!-- Swiper (слайдер) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
@@ -20,18 +27,27 @@
         <span class="brand-text">BrainBloom</span>
       </a>
 
-      <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="menu">
-        <span></span><span></span><span></span>
-      </button>
-
       <nav class="menu" id="menu">
         <a href="#programs">Програми</a>
-        <a href="#nmt">НМТ</a>
+        <a href="#values">Цінності</a>
         <a href="#pricing">Ціни</a>
-        <a href="#how">Як проходить</a>
+        <a href="#reviews">Відгуки</a>
         <a href="#faq">FAQ</a>
         <a class="btn btn-small" href="#contact">Записатися</a>
       </nav>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#programs">Програми</a>
+      <a href="#values">Цінності</a>
+      <a href="#pricing">Ціни</a>
+      <a href="#reviews">Відгуки</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-full" href="#contact">Записатися</a>
     </div>
   </header>
 
@@ -39,24 +55,24 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-text">
-          <div class="badge">5–11 клас • онлайн • мінігрупи та індивідуально</div>
-          <h1>Математика, яка <span class="grad">стає зрозумілою</span>.</h1>
+        <div class="hero-text" data-aos="fade-up">
+          <div class="badge">5–11 клас • онлайн • НМТ • мінігрупи 2–5</div>
+
+          <h1>
+            Математика, яка <span class="grad">вмикає мозок</span> — і дає результат.
+          </h1>
+
           <p class="lead">
-            <b>BrainBloom</b> — онлайн школа математики для учнів 5–11 класів: підтягнемо базу, підвищимо оцінки
-            та підготуємо до <b>НМТ</b> без стресу.
+            <b>BrainBloom</b> — онлайн школа математики для 5–11 класів.
+            Пояснюємо просто, будуємо систему та готуємо до <b>НМТ</b> без стресу.
           </p>
 
           <div class="cta">
-            <a class="btn" href="#contact">Безкоштовна консультація</a>
-            <a class="btn btn-ghost" href="#pricing">Подивитися ціни</a>
+            <a class="btn" href="#contact">Записатися на консультацію</a>
+            <a class="btn btn-ghost" href="#pricing">Ціни та формати</a>
           </div>
 
-          <div class="mini-stats">
-            <div class="stat">
-              <div class="stat-num">5–11</div>
-              <div class="stat-label">класи</div>
-            </div>
+          <div class="stats">
             <div class="stat">
               <div class="stat-num">400₴</div>
               <div class="stat-label">індивідуально / год</div>
@@ -65,18 +81,24 @@
               <div class="stat-num">2–5</div>
               <div class="stat-label">учнів у групі</div>
             </div>
+            <div class="stat">
+              <div class="stat-num">5–11</div>
+              <div class="stat-label">класи</div>
+            </div>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="card">
-            <h2>Швидкий запис</h2>
-            <p class="muted">Заповни форму — і ми підберемо рівень та формат.</p>
+        <div class="hero-card" data-aos="zoom-in">
+          <div class="glass card">
+            <div class="card-top">
+              <h2>Швидкий запис</h2>
+              <p class="muted">Заявка = 30 секунд. Далі напишу в Telegram.</p>
+            </div>
 
             <form class="form" id="leadForm">
               <label>
                 Ім'я учня
-                <input name="name" type="text" placeholder="Напр.: Марія" required />
+                <input name="name" required placeholder="Напр.: Марія" />
               </label>
 
               <label>
@@ -89,68 +111,75 @@
               </label>
 
               <label>
-                Формат
-                <select name="format" required>
-                  <option value="" disabled selected>Оберіть формат</option>
-                  <option>Індивідуально</option>
-                  <option>Мінігрупа</option>
-                  <option>Ще не знаю</option>
+                Потрібно
+                <select name="need" required>
+                  <option value="" disabled selected>Оберіть</option>
+                  <option>Шкільна програма</option>
+                  <option>НМТ</option>
+                  <option>Підтягнути базу</option>
                 </select>
               </label>
 
               <label>
-                Контакт (Telegram / телефон)
-                <input name="contact" type="text" placeholder="@username або +380..." required />
+                Контакт (Telegram/телефон)
+                <input name="contact" required placeholder="@username або +380..." />
               </label>
 
               <button class="btn btn-full" type="submit">Надіслати заявку</button>
-              <p class="tiny muted">Поки що форма показує повідомлення на сторінці (локально). Для реальних заявок підключимо Google Form / Telegram.</p>
+              <p class="tiny muted">
+                *Форма працює в “демо-режимі” (показує повідомлення).
+                Якщо хочеш — підключимо Google Form, і заявки будуть приходити тобі.
+              </p>
+
+              <div class="toast" id="toast" role="status" aria-live="polite"></div>
             </form>
           </div>
         </div>
       </div>
 
-      <div class="container trust">
-        <div class="trust-item">✅ Пояснення просто</div>
-        <div class="trust-item">✅ Домашні + перевірка</div>
-        <div class="trust-item">✅ Інтерактивна дошка</div>
-        <div class="trust-item">✅ План під рівень</div>
+      <div class="container trust" data-aos="fade-up">
+        <div class="chip">✅ Пояснення простими словами</div>
+        <div class="chip">✅ Домашні + перевірка</div>
+        <div class="chip">✅ Інтерактивна дошка</div>
+        <div class="chip">✅ План під рівень учня</div>
       </div>
     </section>
 
     <!-- PROGRAMS -->
     <section class="section" id="programs">
       <div class="container">
-        <h2>Програми навчання</h2>
-        <p class="muted">Обирай напрям — або зробимо персональний маршрут під твої цілі.</p>
+        <div class="section-head" data-aos="fade-up">
+          <h2>Програми</h2>
+          <p class="muted">Обирай формат — або зробимо персональну траєкторію під твої цілі.</p>
+        </div>
 
         <div class="grid3">
-          <article class="feature">
+          <article class="glass feature" data-aos="fade-up">
             <div class="icon">📘</div>
-            <h3>5–8 клас: база + впевненість</h3>
-            <p>Теми зі школи, логіка, “як це працює”, менше стресу — більше розуміння.</p>
+            <h3>5–8 клас</h3>
+            <p>База + логіка. Підтягнемо теми та зробимо математику “нормальною”.</p>
             <ul class="list">
-              <li>підтягування прогалин</li>
-              <li>підготовка до контрольних</li>
-              <li>розбір домашніх</li>
+              <li>прогалини та впевненість</li>
+              <li>контрольні/домашні</li>
+              <li>пояснення без стресу</li>
             </ul>
           </article>
 
-          <article class="feature">
+          <article class="glass feature" data-aos="fade-up" data-aos-delay="80">
             <div class="icon">📗</div>
-            <h3>9–11 клас: сильний рівень</h3>
-            <p>Алгебра + геометрія, складніші задачі, системна практика та швидкі методи.</p>
+            <h3>9–11 клас</h3>
+            <p>Системність + практика. Складні задачі стають зрозумілими й керованими.</p>
             <ul class="list">
-              <li>структура тем</li>
+              <li>алгебра + геометрія</li>
               <li>типові помилки</li>
-              <li>підготовка до іспитів</li>
+              <li>швидкі методи</li>
             </ul>
           </article>
 
-          <article class="feature">
+          <article class="glass feature" data-aos="fade-up" data-aos-delay="160">
             <div class="icon">🎯</div>
-            <h3>Підготовка до НМТ</h3>
-            <p>Повторення бази, тренування тестів, стратегія часу та контроль прогресу.</p>
+            <h3>НМТ</h3>
+            <p>Стратегія + тести + контроль прогресу. Готуємось “по-розумному”.</p>
             <ul class="list">
               <li>діагностика рівня</li>
               <li>план на 4–12 тижнів</li>
@@ -161,89 +190,91 @@
       </div>
     </section>
 
-    <!-- NMT -->
-    <section class="section alt" id="nmt">
-      <div class="container split">
-        <div>
-          <h2>НМТ: індивідуально або в мінігрупі</h2>
-          <p class="muted">
-            Тут важливо не просто “знати формули”, а <b>вміти</b> швидко розпізнавати тип задачі та діяти по плану.
-          </p>
-
-          <div class="pill-row">
-            <span class="pill">🧩 закриваємо прогалини</span>
-            <span class="pill">⏱️ тренуємо швидкість</span>
-            <span class="pill">📈 відстежуємо прогрес</span>
-          </div>
-
-          <div class="callout">
-            <h3>Що входить у підготовку</h3>
-            <ul class="list">
-              <li>вхідна діагностика + цілі</li>
-              <li>персональний план (темп, теми, домашні)</li>
-              <li>тренування типових задач НМТ</li>
-              <li>розбір помилок та лайфхаки</li>
-            </ul>
-          </div>
+    <!-- VALUES -->
+    <section class="section alt" id="values">
+      <div class="container">
+        <div class="section-head" data-aos="fade-up">
+          <h2>Цінності BrainBloom</h2>
+          <p class="muted">Що ми ставимо на перше місце — і чому в учнів з’являється прогрес.</p>
         </div>
 
-        <aside class="card sticky">
-          <h3>Для кого?</h3>
-          <p class="muted">Підійде, якщо ти:</p>
-          <ul class="list">
-            <li>боїшся геометрії/формул</li>
-            <li>плутаєшся в темах</li>
-            <li>хочеш системну підготовку</li>
-            <li>треба “підняти бал”</li>
-          </ul>
-          <a class="btn btn-full" href="#contact">Хочу план</a>
-        </aside>
+        <div class="grid4">
+          <div class="glass value" data-aos="fade-up">
+            <div class="value-top">
+              <span class="emoji">🧠</span>
+              <h3>Розуміння</h3>
+            </div>
+            <p>Не зубримо формули. Пояснюємо так, щоб учень бачив логіку і міг застосовувати сам.</p>
+          </div>
+
+          <div class="glass value" data-aos="fade-up" data-aos-delay="70">
+            <div class="value-top">
+              <span class="emoji">🎯</span>
+              <h3>Результат</h3>
+            </div>
+            <p>Мета — оцінки, впевненість і реальний прогрес, а не “просто провести урок”.</p>
+          </div>
+
+          <div class="glass value" data-aos="fade-up" data-aos-delay="140">
+            <div class="value-top">
+              <span class="emoji">🤝</span>
+              <h3>Підтримка</h3>
+            </div>
+            <p>Без сорому й тиску. Помилки — це точка росту, а не привід для стресу.</p>
+          </div>
+
+          <div class="glass value" data-aos="fade-up" data-aos-delay="210">
+            <div class="value-top">
+              <span class="emoji">✨</span>
+              <h3>Система</h3>
+            </div>
+            <p>План під рівень учня: теми, домашні, фідбек, контроль прогресу — без хаосу.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- PRICING -->
     <section class="section" id="pricing">
       <div class="container">
-        <h2>Ціни</h2>
-        <p class="muted">НМТ: індивідуально або групові заняття в залежності від кількості учнів.</p>
+        <div class="section-head" data-aos="fade-up">
+          <h2>Ціни</h2>
+          <p class="muted">НМТ: індивідуально або мінігрупи (ціна залежить від кількості учнів).</p>
+        </div>
 
         <div class="pricing">
-          <div class="price-card">
-            <div class="price-head">
-              <h3>Індивідуально</h3>
-              <div class="price">400₴ <span>/ година</span></div>
-            </div>
+          <div class="glass price-card" data-aos="fade-up">
+            <h3>Індивідуально</h3>
+            <div class="price">400₴ <span>/ година</span></div>
             <ul class="list">
-              <li>максимум уваги</li>
-              <li>план під твій рівень</li>
+              <li>план під рівень</li>
               <li>гнучкий графік</li>
+              <li>максимум уваги</li>
             </ul>
             <a class="btn btn-full" href="#contact">Записатися</a>
           </div>
 
-          <div class="price-card highlight">
-            <div class="ribbon">вигідно</div>
-            <div class="price-head">
-              <h3>Мінігрупа</h3>
-              <div class="price">від 200₴ <span>/ учень / година</span></div>
+          <div class="glass price-card highlight" data-aos="fade-up" data-aos-delay="90">
+            <div class="tag">вигідно</div>
+            <h3>Мінігрупа 2–5</h3>
+            <div class="price">від 200₴ <span>/ учень / год</span></div>
+
+            <div class="mini-table">
+              <div class="r"><span>2 учні</span><b>300₴</b></div>
+              <div class="r"><span>3 учні</span><b>250₴</b></div>
+              <div class="r"><span>4–5 учнів</span><b>200₴</b></div>
             </div>
-            <div class="table">
-              <div class="row"><span>2 учні</span><b>300₴</b></div>
-              <div class="row"><span>3 учні</span><b>250₴</b></div>
-              <div class="row"><span>4–5 учнів</span><b>200₴</b></div>
-            </div>
+
             <a class="btn btn-full" href="#contact">Зібрати групу</a>
           </div>
 
-          <div class="price-card">
-            <div class="price-head">
-              <h3>Шкільна програма</h3>
-              <div class="price">за запитом</div>
-            </div>
+          <div class="glass price-card" data-aos="fade-up" data-aos-delay="180">
+            <h3>Шкільна програма</h3>
+            <div class="price">за запитом</div>
             <ul class="list">
               <li>5–11 клас</li>
-              <li>підтягування тем</li>
-              <li>контрольні/домашні</li>
+              <li>теми, контрольні, домашні</li>
+              <li>підтягування бази</li>
             </ul>
             <a class="btn btn-full" href="#contact">Уточнити</a>
           </div>
@@ -254,48 +285,102 @@
     <!-- HOW -->
     <section class="section alt" id="how">
       <div class="container">
-        <h2>Як проходить навчання</h2>
+        <div class="section-head" data-aos="fade-up">
+          <h2>Як проходить навчання</h2>
+          <p class="muted">4 кроки — і в учня з’являється система та спокій.</p>
+        </div>
+
         <div class="steps">
-          <div class="step">
+          <div class="glass step" data-aos="fade-up">
             <div class="step-num">1</div>
             <h3>Діагностика</h3>
-            <p>Коротко перевіряємо рівень та визначаємо цілі.</p>
+            <p>Швидко визначаємо рівень, сильні та слабкі місця.</p>
           </div>
-          <div class="step">
+          <div class="glass step" data-aos="fade-up" data-aos-delay="70">
             <div class="step-num">2</div>
             <h3>План</h3>
-            <p>Складаємо теми, темп, домашні, контроль прогресу.</p>
+            <p>Робимо маршрут тем + домашні + контроль прогресу.</p>
           </div>
-          <div class="step">
+          <div class="glass step" data-aos="fade-up" data-aos-delay="140">
             <div class="step-num">3</div>
             <h3>Урок + практика</h3>
-            <p>Пояснення, приклади, задачі разом, потім самостійно.</p>
+            <p>Пояснення, приклади, відпрацювання задач разом.</p>
           </div>
-          <div class="step">
+          <div class="glass step" data-aos="fade-up" data-aos-delay="210">
             <div class="step-num">4</div>
-            <h3>Домашнє + перевірка</h3>
-            <p>Фідбек, розбір помилок, закріплення.</p>
+            <h3>Фідбек</h3>
+            <p>Перевірка домашніх, помилки, закріплення та повтор.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head" data-aos="fade-up">
+          <h2>Відгуки</h2>
+          <p class="muted">Додай свої реальні відгуки пізніше — тут уже готовий стиль “як у топових шкіл”.</p>
+        </div>
+
+        <div class="glass reviews-wrap" data-aos="fade-up">
+          <div class="swiper" id="reviewsSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide review">
+                <p>“Я почала розуміти теми, які в школі були ‘туманом’. Тепер не боюсь контрольних.”</p>
+                <div class="who">— учениця, 8 клас</div>
+              </div>
+              <div class="swiper-slide review">
+                <p>“Мінігрупа супер: кожного питають, пояснюють помилки, і не страшно відповідати.”</p>
+                <div class="who">— учень, 9 клас</div>
+              </div>
+              <div class="swiper-slide review">
+                <p>“З’явилась система підготовки до НМТ. Мені стало спокійніше, бо є план.”</p>
+                <div class="who">— учениця, 11 клас</div>
+              </div>
+              <div class="swiper-slide review">
+                <p>“Пояснення реально прості. Нарешті зрозуміла геометрію.”</p>
+                <div class="who">— учениця, 10 клас</div>
+              </div>
+            </div>
+
+            <div class="swiper-controls">
+              <button class="swbtn" id="prevBtn" aria-label="Назад">←</button>
+              <div class="swiper-pagination"></div>
+              <button class="swbtn" id="nextBtn" aria-label="Вперед">→</button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="section" id="faq">
+    <section class="section alt" id="faq">
       <div class="container">
-        <h2>FAQ</h2>
+        <div class="section-head" data-aos="fade-up">
+          <h2>FAQ</h2>
+          <p class="muted">Найчастіші питання.</p>
+        </div>
+
         <div class="faq">
-          <details>
-            <summary>Скільки триває одне заняття?</summary>
-            <p>Зазвичай 60 хв. За потреби можна 90 хв (особливо для НМТ).</p>
+          <details class="glass" data-aos="fade-up">
+            <summary>Скільки триває заняття?</summary>
+            <p>Стандартно 60 хв. Для НМТ можна 90 хв (за потреби).</p>
           </details>
-          <details>
+
+          <details class="glass" data-aos="fade-up" data-aos-delay="70">
             <summary>Де проходять уроки?</summary>
             <p>Zoom або Google Meet + інтерактивна дошка.</p>
           </details>
-          <details>
-            <summary>Чи можна сформувати групу з друзями?</summary>
-            <p>Так! Напиши “група” і кількість людей — підберемо зручний час.</p>
+
+          <details class="glass" data-aos="fade-up" data-aos-delay="140">
+            <summary>Що якщо учень боїться помилок?</summary>
+            <p>Це нормально. У BrainBloom помилки — це частина навчання. Без тиску, з підтримкою.</p>
+          </details>
+
+          <details class="glass" data-aos="fade-up" data-aos-delay="210">
+            <summary>Чи можна зібрати групу з друзями?</summary>
+            <p>Так! Напиши в заявці “група” і кількість людей — підберемо час.</p>
           </details>
         </div>
       </div>
@@ -303,52 +388,65 @@
 
     <!-- CONTACT -->
     <section class="section contact" id="contact">
-      <div class="container split">
-        <div>
-          <h2>Записатися в BrainBloom</h2>
-          <p class="muted">Вкажи контакти — і ми зв’яжемося, щоб узгодити перший урок.</p>
+      <div class="container contact-grid">
+        <div class="contact-left" data-aos="fade-up">
+          <h2>Записатися</h2>
+          <p class="muted">Напиши в Telegram — відповім і підберемо формат.</p>
 
-          <div class="contact-box">
-            <div class="contact-item">
-              <div class="contact-k">Telegram</div>
-              <div class="contact-v"><span class="muted">додай свій @нік</span></div>
+          <div class="contact-card glass">
+            <div class="contact-row">
+              <div class="k">Telegram</div>
+              <a class="v link" href="https://t.me/lizwzw" target="_blank" rel="noreferrer">@lizwzw</a>
             </div>
-            <div class="contact-item">
-              <div class="contact-k">Instagram</div>
-              <div class="contact-v"><span class="muted">додай свій @нік</span></div>
+            <div class="contact-row">
+              <div class="k">Формати</div>
+              <div class="v">Індивідуально / Мінігрупи 2–5</div>
             </div>
-            <div class="contact-item">
-              <div class="contact-k">Email</div>
-              <div class="contact-v"><span class="muted">додай пошту</span></div>
+            <div class="contact-row">
+              <div class="k">Класи</div>
+              <div class="v">5–11</div>
             </div>
+          </div>
+
+          <div class="mini-cta">
+            <a class="btn" href="https://t.me/lizwzw" target="_blank" rel="noreferrer">Написати в Telegram</a>
+            <a class="btn btn-ghost" href="#top">На початок</a>
           </div>
         </div>
 
-        <div class="card">
-          <h3>Заявка</h3>
+        <div class="glass card" data-aos="zoom-in">
+          <h3>Заявка (демо)</h3>
+          <p class="muted">Можемо підключити реальну форму з Google Forms.</p>
+
           <form class="form" id="contactForm">
             <label>Ім'я
-              <input name="name" type="text" required placeholder="Твоє ім'я" />
+              <input name="name" required placeholder="Твоє ім'я" />
             </label>
-            <label>Телефон / Telegram
-              <input name="contact" type="text" required placeholder="@username або +380..." />
+            <label>Telegram/телефон
+              <input name="contact" required placeholder="@username або +380..." />
             </label>
             <label>Повідомлення
-              <textarea name="msg" rows="4" placeholder="Клас, рівень, що потрібно (НМТ/шкільна), бажаний час"></textarea>
+              <textarea name="msg" rows="4" placeholder="Клас, що потрібно (НМТ/шкільна), бажаний час"></textarea>
             </label>
             <button class="btn btn-full" type="submit">Надіслати</button>
+            <div class="toast" id="toast2" role="status" aria-live="polite"></div>
           </form>
-          <div class="toast" id="toast" role="status" aria-live="polite"></div>
         </div>
       </div>
-    </section>
 
-    <footer class="footer">
-      <div class="container foot">
-        <div class="brand foot-brand"><span class="logo">🧠🌸</span> BrainBloom</div>
-        <div class="muted">© <span id="year"></span> BrainBloom</div>
-      </div>
-    </footer>
+      <footer class="footer">
+        <div class="container foot">
+          <div class="foot-brand">
+            <span class="logo">🧠🌸</span><span>BrainBloom</span>
+          </div>
+          <div class="muted">© <span id="year"></span> BrainBloom</div>
+        </div>
+      </footer>
+    </section>
   </main>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
