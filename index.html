@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BrainBloom — онлайн школа математики (5–11 клас) + НМТ</title>
+  <meta name="description" content="BrainBloom — онлайн школа математики для 5–11 класів. Підготовка до НМТ індивідуально та в мінігрупах." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body id="top">
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="BrainBloom">
+        <span class="logo" aria-hidden="true">🧠🌸</span>
+        <span class="brand-text">BrainBloom</span>
+      </a>
+
+      <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu" id="menu">
+        <a href="#programs">Програми</a>
+        <a href="#nmt">НМТ</a>
+        <a href="#pricing">Ціни</a>
+        <a href="#how">Як проходить</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-small" href="#contact">Записатися</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="badge">5–11 клас • онлайн • мінігрупи та індивідуально</div>
+          <h1>Математика, яка <span class="grad">стає зрозумілою</span>.</h1>
+          <p class="lead">
+            <b>BrainBloom</b> — онлайн школа математики для учнів 5–11 класів: підтягнемо базу, підвищимо оцінки
+            та підготуємо до <b>НМТ</b> без стресу.
+          </p>
+
+          <div class="cta">
+            <a class="btn" href="#contact">Безкоштовна консультація</a>
+            <a class="btn btn-ghost" href="#pricing">Подивитися ціни</a>
+          </div>
+
+          <div class="mini-stats">
+            <div class="stat">
+              <div class="stat-num">5–11</div>
+              <div class="stat-label">класи</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">400₴</div>
+              <div class="stat-label">індивідуально / год</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">2–5</div>
+              <div class="stat-label">учнів у групі</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card">
+            <h2>Швидкий запис</h2>
+            <p class="muted">Заповни форму — і ми підберемо рівень та формат.</p>
+
+            <form class="form" id="leadForm">
+              <label>
+                Ім'я учня
+                <input name="name" type="text" placeholder="Напр.: Марія" required />
+              </label>
+
+              <label>
+                Клас
+                <select name="grade" required>
+                  <option value="" disabled selected>Оберіть клас</option>
+                  <option>5</option><option>6</option><option>7</option><option>8</option>
+                  <option>9</option><option>10</option><option>11</option>
+                </select>
+              </label>
+
+              <label>
+                Формат
+                <select name="format" required>
+                  <option value="" disabled selected>Оберіть формат</option>
+                  <option>Індивідуально</option>
+                  <option>Мінігрупа</option>
+                  <option>Ще не знаю</option>
+                </select>
+              </label>
+
+              <label>
+                Контакт (Telegram / телефон)
+                <input name="contact" type="text" placeholder="@username або +380..." required />
+              </label>
+
+              <button class="btn btn-full" type="submit">Надіслати заявку</button>
+              <p class="tiny muted">Поки що форма показує повідомлення на сторінці (локально). Для реальних заявок підключимо Google Form / Telegram.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container trust">
+        <div class="trust-item">✅ Пояснення просто</div>
+        <div class="trust-item">✅ Домашні + перевірка</div>
+        <div class="trust-item">✅ Інтерактивна дошка</div>
+        <div class="trust-item">✅ План під рівень</div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section class="section" id="programs">
+      <div class="container">
+        <h2>Програми навчання</h2>
+        <p class="muted">Обирай напрям — або зробимо персональний маршрут під твої цілі.</p>
+
+        <div class="grid3">
+          <article class="feature">
+            <div class="icon">📘</div>
+            <h3>5–8 клас: база + впевненість</h3>
+            <p>Теми зі школи, логіка, “як це працює”, менше стресу — більше розуміння.</p>
+            <ul class="list">
+              <li>підтягування прогалин</li>
+              <li>підготовка до контрольних</li>
+              <li>розбір домашніх</li>
+            </ul>
+          </article>
+
+          <article class="feature">
+            <div class="icon">📗</div>
+            <h3>9–11 клас: сильний рівень</h3>
+            <p>Алгебра + геометрія, складніші задачі, системна практика та швидкі методи.</p>
+            <ul class="list">
+              <li>структура тем</li>
+              <li>типові помилки</li>
+              <li>підготовка до іспитів</li>
+            </ul>
+          </article>
+
+          <article class="feature">
+            <div class="icon">🎯</div>
+            <h3>Підготовка до НМТ</h3>
+            <p>Повторення бази, тренування тестів, стратегія часу та контроль прогресу.</p>
+            <ul class="list">
+              <li>діагностика рівня</li>
+              <li>план на 4–12 тижнів</li>
+              <li>щотижневі міні-тести</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NMT -->
+    <section class="section alt" id="nmt">
+      <div class="container split">
+        <div>
+          <h2>НМТ: індивідуально або в мінігрупі</h2>
+          <p class="muted">
+            Тут важливо не просто “знати формули”, а <b>вміти</b> швидко розпізнавати тип задачі та діяти по плану.
+          </p>
+
+          <div class="pill-row">
+            <span class="pill">🧩 закриваємо прогалини</span>
+            <span class="pill">⏱️ тренуємо швидкість</span>
+            <span class="pill">📈 відстежуємо прогрес</span>
+          </div>
+
+          <div class="callout">
+            <h3>Що входить у підготовку</h3>
+            <ul class="list">
+              <li>вхідна діагностика + цілі</li>
+              <li>персональний план (темп, теми, домашні)</li>
+              <li>тренування типових задач НМТ</li>
+              <li>розбір помилок та лайфхаки</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="card sticky">
+          <h3>Для кого?</h3>
+          <p class="muted">Підійде, якщо ти:</p>
+          <ul class="list">
+            <li>боїшся геометрії/формул</li>
+            <li>плутаєшся в темах</li>
+            <li>хочеш системну підготовку</li>
+            <li>треба “підняти бал”</li>
+          </ul>
+          <a class="btn btn-full" href="#contact">Хочу план</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <h2>Ціни</h2>
+        <p class="muted">НМТ: індивідуально або групові заняття в залежності від кількості учнів.</p>
+
+        <div class="pricing">
+          <div class="price-card">
+            <div class="price-head">
+              <h3>Індивідуально</h3>
+              <div class="price">400₴ <span>/ година</span></div>
+            </div>
+            <ul class="list">
+              <li>максимум уваги</li>
+              <li>план під твій рівень</li>
+              <li>гнучкий графік</li>
+            </ul>
+            <a class="btn btn-full" href="#contact">Записатися</a>
+          </div>
+
+          <div class="price-card highlight">
+            <div class="ribbon">вигідно</div>
+            <div class="price-head">
+              <h3>Мінігрупа</h3>
+              <div class="price">від 200₴ <span>/ учень / година</span></div>
+            </div>
+            <div class="table">
+              <div class="row"><span>2 учні</span><b>300₴</b></div>
+              <div class="row"><span>3 учні</span><b>250₴</b></div>
+              <div class="row"><span>4–5 учнів</span><b>200₴</b></div>
+            </div>
+            <a class="btn btn-full" href="#contact">Зібрати групу</a>
+          </div>
+
+          <div class="price-card">
+            <div class="price-head">
+              <h3>Шкільна програма</h3>
+              <div class="price">за запитом</div>
+            </div>
+            <ul class="list">
+              <li>5–11 клас</li>
+              <li>підтягування тем</li>
+              <li>контрольні/домашні</li>
+            </ul>
+            <a class="btn btn-full" href="#contact">Уточнити</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section class="section alt" id="how">
+      <div class="container">
+        <h2>Як проходить навчання</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Діагностика</h3>
+            <p>Коротко перевіряємо рівень та визначаємо цілі.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>План</h3>
+            <p>Складаємо теми, темп, домашні, контроль прогресу.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Урок + практика</h3>
+            <p>Пояснення, приклади, задачі разом, потім самостійно.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <h3>Домашнє + перевірка</h3>
+            <p>Фідбек, розбір помилок, закріплення.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <h2>FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>Скільки триває одне заняття?</summary>
+            <p>Зазвичай 60 хв. За потреби можна 90 хв (особливо для НМТ).</p>
+          </details>
+          <details>
+            <summary>Де проходять уроки?</summary>
+            <p>Zoom або Google Meet + інтерактивна дошка.</p>
+          </details>
+          <details>
+            <summary>Чи можна сформувати групу з друзями?</summary>
+            <p>Так! Напиши “група” і кількість людей — підберемо зручний час.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container split">
+        <div>
+          <h2>Записатися в BrainBloom</h2>
+          <p class="muted">Вкажи контакти — і ми зв’яжемося, щоб узгодити перший урок.</p>
+
+          <div class="contact-box">
+            <div class="contact-item">
+              <div class="contact-k">Telegram</div>
+              <div class="contact-v"><span class="muted">додай свій @нік</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-k">Instagram</div>
+              <div class="contact-v"><span class="muted">додай свій @нік</span></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-k">Email</div>
+              <div class="contact-v"><span class="muted">додай пошту</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Заявка</h3>
+          <form class="form" id="contactForm">
+            <label>Ім'я
+              <input name="name" type="text" required placeholder="Твоє ім'я" />
+            </label>
+            <label>Телефон / Telegram
+              <input name="contact" type="text" required placeholder="@username або +380..." />
+            </label>
+            <label>Повідомлення
+              <textarea name="msg" rows="4" placeholder="Клас, рівень, що потрібно (НМТ/шкільна), бажаний час"></textarea>
+            </label>
+            <button class="btn btn-full" type="submit">Надіслати</button>
+          </form>
+          <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container foot">
+        <div class="brand foot-brand"><span class="logo">🧠🌸</span> BrainBloom</div>
+        <div class="muted">© <span id="year"></span> BrainBloom</div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

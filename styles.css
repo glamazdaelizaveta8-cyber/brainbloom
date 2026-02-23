@@ -1,0 +1,60 @@
+function showToast(text) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.textContent = text;
+  toast.style.display = "block";
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(() => {
+    toast.style.display = "none";
+  }, 3500);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Year in footer
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+
+  // Burger menu
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("menu");
+
+  if (burger && menu) {
+    burger.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("open");
+      burger.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // Close menu when click link
+    menu.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        menu.classList.remove("open");
+        burger.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  // Forms (demo)
+  const leadForm = document.getElementById("leadForm");
+  if (leadForm) {
+    leadForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(leadForm);
+      const name = fd.get("name");
+      const grade = fd.get("grade");
+      const format = fd.get("format");
+      showToast(`Дякую, ${name}! ✅ Заявка прийнята (клас: ${grade}, формат: ${format}).`);
+      leadForm.reset();
+    });
+  }
+
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(contactForm);
+      const name = fd.get("name");
+      showToast(`Дякую, ${name}! ✅ Ми скоро зв'яжемось з тобою.`);
+      contactForm.reset();
+    });
+  }
+});
