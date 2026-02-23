@@ -95,44 +95,14 @@
               <p class="muted">Заявка = 30 секунд. Далі напишу в Telegram.</p>
             </div>
 
-            <form class="form" id="leadForm">
-              <label>
-                Ім'я учня
-                <input name="name" required placeholder="Напр.: Марія" />
-              </label>
-
-              <label>
-                Клас
-                <select name="grade" required>
-                  <option value="" disabled selected>Оберіть клас</option>
-                  <option>5</option><option>6</option><option>7</option><option>8</option>
-                  <option>9</option><option>10</option><option>11</option>
-                </select>
-              </label>
-
-              <label>
-                Потрібно
-                <select name="need" required>
-                  <option value="" disabled selected>Оберіть</option>
-                  <option>Шкільна програма</option>
-                  <option>НМТ</option>
-                  <option>Підтягнути базу</option>
-                </select>
-              </label>
-
-              <label>
-                Контакт (Telegram/телефон)
-                <input name="contact" required placeholder="@username або +380..." />
-              </label>
-
-              <button class="btn btn-full" type="submit">Надіслати заявку</button>
-              <p class="tiny muted">
-                *Форма працює в “демо-режимі” (показує повідомлення).
-                Якщо хочеш — підключимо Google Form, і заявки будуть приходити тобі.
-              </p>
-
-              <div class="toast" id="toast" role="status" aria-live="polite"></div>
-            </form>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScNV7Dp9IuEmTNIy-QjNvIurRYKpCriMTBt8sabdLeGYt9fPg/viewform?embedded=true"
+width="100%"
+height="900"
+frameborder="0"
+marginheight="0"
+marginwidth="0">
+Загрузка…
+</iframe>
           </div>
         </div>
       </div>
@@ -450,3 +420,4 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
+
