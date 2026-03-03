@@ -1,352 +1,138 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BrainBloom — онлайн школа математики 5–11 класів • НМТ</title>
-  <meta name="description" content="BrainBloom — онлайн школа математики для 5–11 класів. Підготовка до НМТ: індивідуально 400₴/год або мінігрупи 2–5." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrainBloom — Premium Online Math School</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script defer src="script.js"></script>
 </head>
 
-<body id="top">
-  <header class="header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="BrainBloom">
-        <span class="logo" aria-hidden="true">🧠🌸</span>
-        <span class="brand-text">BrainBloom</span>
-      </a>
+<body>
 
-      <nav class="menu" id="menu">
-        <a href="#programs">Програми</a>
-        <a href="#values">Цінності</a>
-        <a href="#pricing">Ціни</a>
-        <a href="#reviews">Відгуки</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn-small" href="#contact">Контакт</a>
-      </nav>
+<header class="header">
+<div class="container nav">
+<div class="logo">🧠🌸 BrainBloom</div>
 
-      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+<nav class="menu" id="menu">
+<a href="#programs">Програми</a>
+<a href="#pricing">Ціни</a>
+<a href="#reviews">Відгуки</a>
+<a href="#contact">Контакт</a>
+</nav>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#programs">Програми</a>
-      <a href="#values">Цінності</a>
-      <a href="#pricing">Ціни</a>
-      <a href="#reviews">Відгуки</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn-full" href="#contact">Контакт</a>
-    </div>
-  </header>
+<button class="burger" id="burger">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <div class="badge">5–11 клас • онлайн • НМТ • мінігрупи 2–5</div>
+<section class="hero">
+<div class="container hero-grid">
 
-          <h1>
-            Математика, яка <span class="grad">вмикає мозок</span> — і дає результат.
-          </h1>
+<div class="hero-text fade-up">
+<h1>Математика, яка <span class="gradient">вмикає мозок</span></h1>
+<p>Онлайн школа 5–11 класів. Підготовка до НМТ без стресу.</p>
 
-          <p class="lead">
-            <b>BrainBloom</b> — онлайн школа математики для 5–11 класів.
-            Пояснюємо просто, будуємо систему та готуємо до <b>НМТ</b> без стресу.
-          </p>
+<div class="badges">
+<div>400₴ / індивідуально</div>
+<div>200–300₴ / групи</div>
+<div>5–11 класи</div>
+</div>
 
-          <div class="cta">
-            <a class="btn" href="#signup">Записатися</a>
-            <a class="btn btn-ghost" href="#pricing">Ціни</a>
-          </div>
+<a href="#signup" class="btn glow">Записатися</a>
+</div>
 
-          <div class="stats">
-            <div class="stat">
-              <div class="stat-num">400₴</div>
-              <div class="stat-label">індивідуально / год</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">2–5</div>
-              <div class="stat-label">учнів у групі</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">5–11</div>
-              <div class="stat-label">класи</div>
-            </div>
-          </div>
-        </div>
+<div class="glass-card fade-up" id="signup">
+<h3>Запис на заняття</h3>
 
-        <!-- GOOGLE FORM (АКУРАТНО) -->
-        <div class="hero-card" id="signup">
-          <div class="glass card">
-            <div class="card-top">
-              <h2>Записатися</h2>
-              <p class="muted">Заповни форму — і я напишу тобі в Telegram.</p>
-            </div>
+<div class="form-embed">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScNV7Dp9IuEmTNIy-QjNvIurRYKpCriMTBt8sabdLeGYt9fPg/viewform?embedded=true"></iframe>
+</div>
+</div>
 
-            <div class="form-embed">
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLScNV7Dp9IuEmTNIy-QjNvIurRYKpCriMTBt8sabdLeGYt9fPg/viewform?embedded=true"
-                title="BrainBloom заявки"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-                Завантаження…
-              </iframe>
-            </div>
+</div>
+</section>
 
-            <a class="btn btn-full" href="https://docs.google.com/forms/d/e/1FAIpQLScNV7Dp9IuEmTNIy-QjNvIurRYKpCriMTBt8sabdLeGYt9fPg/viewform"
-               target="_blank" rel="noreferrer">
-              Відкрити форму в новій вкладці
-            </a>
-          </div>
-        </div>
-      </div>
+<section id="programs" class="section">
+<div class="container">
+<h2 class="fade-up">Програми</h2>
 
-      <div class="container trust">
-        <div class="chip">✅ Пояснення простими словами</div>
-        <div class="chip">✅ Домашні + перевірка</div>
-        <div class="chip">✅ Інтерактивна дошка</div>
-        <div class="chip">✅ План під рівень учня</div>
-      </div>
-    </section>
+<div class="grid">
+<div class="glass-card fade-up">5–8 клас — база + логіка</div>
+<div class="glass-card fade-up">9–11 клас — системність</div>
+<div class="glass-card fade-up">НМТ — стратегія + тести</div>
+</div>
+</div>
+</section>
 
-    <!-- PROGRAMS -->
-    <section class="section" id="programs">
-      <div class="container">
-        <div class="section-head">
-          <h2>Програми</h2>
-          <p class="muted">Обирай формат — або зробимо персональну траєкторію під твої цілі.</p>
-        </div>
+<section id="pricing" class="section darker">
+<div class="container">
+<h2 class="fade-up">Ціни</h2>
 
-        <div class="grid3">
-          <article class="glass feature">
-            <div class="icon">📘</div>
-            <h3>5–8 клас</h3>
-            <p>База + логіка. Підтягнемо теми та зробимо математику “нормальною”.</p>
-            <ul class="list">
-              <li>прогалини та впевненість</li>
-              <li>контрольні/домашні</li>
-              <li>пояснення без стресу</li>
-            </ul>
-          </article>
+<div class="grid">
+<div class="glass-card fade-up">
+<h3>Індивідуально</h3>
+<p class="price">400₴ / год</p>
+</div>
 
-          <article class="glass feature">
-            <div class="icon">📗</div>
-            <h3>9–11 клас</h3>
-            <p>Системність + практика. Складні задачі стають зрозумілими й керованими.</p>
-            <ul class="list">
-              <li>алгебра + геометрія</li>
-              <li>типові помилки</li>
-              <li>швидкі методи</li>
-            </ul>
-          </article>
+<div class="glass-card highlight fade-up">
+<h3>Мінігрупи</h3>
+<p>2 учні — 300₴</p>
+<p>3 учні — 250₴</p>
+<p>4–5 учнів — 200₴</p>
+</div>
 
-          <article class="glass feature">
-            <div class="icon">🎯</div>
-            <h3>НМТ</h3>
-            <p>Стратегія + тести + контроль прогресу. Готуємось “по-розумному”.</p>
-            <ul class="list">
-              <li>діагностика рівня</li>
-              <li>план на 4–12 тижнів</li>
-              <li>щотижневі міні-тести</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+<div class="glass-card fade-up">
+<h3>Шкільна програма</h3>
+<p>За запитом</p>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- VALUES -->
-    <section class="section alt" id="values">
-      <div class="container">
-        <div class="section-head">
-          <h2>Цінності BrainBloom</h2>
-          <p class="muted">Що ми ставимо на перше місце — і чому в учнів з’являється прогрес.</p>
-        </div>
+<section id="reviews" class="section">
+<div class="container">
+<h2 class="fade-up">Відгуки</h2>
 
-        <div class="grid4">
-          <div class="glass value">
-            <div class="value-top"><span class="emoji">🧠</span><h3>Розуміння</h3></div>
-            <p>Не зубримо формули. Пояснюємо так, щоб учень бачив логіку і міг застосовувати сам.</p>
-          </div>
+<div class="grid">
+<div class="glass-card fade-up">
+<b>Аня, 8 клас</b>
+<p>“Я почала розуміти теми, які раніше були складними.”</p>
+</div>
 
-          <div class="glass value">
-            <div class="value-top"><span class="emoji">🎯</span><h3>Результат</h3></div>
-            <p>Мета — оцінки, впевненість і реальний прогрес, а не “просто провести урок”.</p>
-          </div>
+<div class="glass-card fade-up">
+<b>Марк, 9 клас</b>
+<p>“В групі дуже комфортно.”</p>
+</div>
 
-          <div class="glass value">
-            <div class="value-top"><span class="emoji">🤝</span><h3>Підтримка</h3></div>
-            <p>Без сорому й тиску. Помилки — це точка росту, а не привід для стресу.</p>
-          </div>
+<div class="glass-card fade-up">
+<b>Іра, 11 клас</b>
+<p>“Підготовка до НМТ стала системною.”</p>
+</div>
+</div>
+</div>
+</section>
 
-          <div class="glass value">
-            <div class="value-top"><span class="emoji">✨</span><h3>Система</h3></div>
-            <p>План під рівень учня: теми, домашні, фідбек, контроль прогресу — без хаосу.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="contact" class="section darker">
+<div class="container fade-up">
+<h2>Контакт</h2>
+<p>Telegram: <b>@lizwzw</b></p>
+</div>
+</section>
 
-    <!-- PRICING -->
-    <section class="section" id="pricing">
-      <div class="container">
-        <div class="section-head">
-          <h2>Ціни</h2>
-          <p class="muted">НМТ: індивідуально або мінігрупи (ціна залежить від кількості учнів).</p>
-        </div>
+<footer class="footer">
+<div class="container">
+© <span id="year"></span> BrainBloom
+</div>
+</footer>
 
-        <div class="pricing">
-          <div class="glass price-card">
-            <h3>Індивідуально</h3>
-            <div class="price">400₴ <span>/ година</span></div>
-            <ul class="list">
-              <li>план під рівень</li>
-              <li>гнучкий графік</li>
-              <li>максимум уваги</li>
-            </ul>
-            <a class="btn btn-full" href="#signup">Записатися</a>
-          </div>
-
-          <div class="glass price-card highlight">
-            <div class="tag">вигідно</div>
-            <h3>Мінігрупа 2–5</h3>
-            <div class="price">від 200₴ <span>/ учень / год</span></div>
-
-            <div class="mini-table">
-              <div class="r"><span>2 учні</span><b>300₴</b></div>
-              <div class="r"><span>3 учні</span><b>250₴</b></div>
-              <div class="r"><span>4–5 учнів</span><b>200₴</b></div>
-            </div>
-
-            <a class="btn btn-full" href="#signup">Зібрати групу</a>
-          </div>
-
-          <div class="glass price-card">
-            <h3>Шкільна програма</h3>
-            <div class="price">за запитом</div>
-            <ul class="list">
-              <li>5–11 клас</li>
-              <li>теми, контрольні, домашні</li>
-              <li>підтягування бази</li>
-            </ul>
-            <a class="btn btn-full" href="#contact">Уточнити</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <section class="section alt" id="reviews">
-      <div class="container">
-        <div class="section-head">
-          <h2>Відгуки</h2>
-          <p class="muted">Поки тут приклади — потім заміниш на свої реальні.</p>
-        </div>
-
-        <div class="grid3">
-          <div class="glass review">
-            <p>“Я почала розуміти теми, які в школі були ‘туманом’. Тепер не боюсь контрольних.”</p>
-            <div class="who">— учениця, 8 клас</div>
-          </div>
-          <div class="glass review">
-            <p>“Мінігрупа супер: кожного питають, пояснюють помилки, і не страшно відповідати.”</p>
-            <div class="who">— учень, 9 клас</div>
-          </div>
-          <div class="glass review">
-            <p>“З’явилась система підготовки до НМТ. Спокійніше, бо є план.”</p>
-            <div class="who">— учениця, 11 клас</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-head">
-          <h2>FAQ</h2>
-          <p class="muted">Найчастіші питання.</p>
-        </div>
-
-        <div class="faq">
-          <details class="glass">
-            <summary>Скільки триває заняття?</summary>
-            <p>Стандартно 60 хв. Для НМТ можна 90 хв (за потреби).</p>
-          </details>
-
-          <details class="glass">
-            <summary>Де проходять уроки?</summary>
-            <p>Zoom або Google Meet + інтерактивна дошка.</p>
-          </details>
-
-          <details class="glass">
-            <summary>Чи можна зібрати групу з друзями?</summary>
-            <p>Так! Вкажіть у формі, що ви група і скільки вас — підберемо час.</p>
-          </details>
-
-          <details class="glass">
-            <summary>Що потрібно для занять?</summary>
-            <p>Ноут/планшет, інтернет, зошит/ручка. Все інше дам.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section alt" id="contact">
-      <div class="container contact-grid">
-        <div class="glass card">
-          <h2>Контакт</h2>
-          <p class="muted">Найшвидше — напиши в Telegram.</p>
-
-          <div class="contact-card">
-            <div class="contact-row">
-              <div class="k">Telegram</div>
-              <a class="v link" href="https://t.me/lizwzw" target="_blank" rel="noreferrer">@lizwzw</a>
-            </div>
-            <div class="contact-row">
-              <div class="k">Формати</div>
-              <div class="v">Індивідуально / Мінігрупи 2–5</div>
-            </div>
-            <div class="contact-row">
-              <div class="k">Класи</div>
-              <div class="v">5–11</div>
-            </div>
-          </div>
-
-          <div class="mini-cta">
-            <a class="btn" href="https://t.me/lizwzw" target="_blank" rel="noreferrer">Написати в Telegram</a>
-            <a class="btn btn-ghost" href="#top">На початок</a>
-          </div>
-        </div>
-
-        <div class="glass card">
-          <h3>Швидкий запис</h3>
-          <p class="muted">Форма вище на сторінці (в блоці “Записатися”).</p>
-          <a class="btn btn-full" href="#signup">Перейти до форми</a>
-        </div>
-      </div>
-
-      <footer class="footer">
-        <div class="container foot">
-          <div class="foot-brand">
-            <span class="logo">🧠🌸</span><span>BrainBloom</span>
-          </div>
-          <div class="muted">© <span id="year"></span> BrainBloom</div>
-        </div>
-      </footer>
-    </section>
-  </main>
 </body>
 </html>
        
+
 
 
 
