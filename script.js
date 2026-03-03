@@ -1,21 +1,23 @@
-// Mobile menu
+document.getElementById("year").textContent = new Date().getFullYear();
+
 const burger = document.getElementById("burger");
-const mobileMenu = document.getElementById("mobileMenu");
+const menu = document.getElementById("menu");
 
-if (burger && mobileMenu) {
-  burger.addEventListener("click", () => {
-    const isOpen = mobileMenu.classList.toggle("open");
-    burger.setAttribute("aria-expanded", String(isOpen));
-  });
+burger.addEventListener("click", () => {
+menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+menu.style.flexDirection = "column";
+});
 
-  mobileMenu.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      mobileMenu.classList.remove("open");
-      burger.setAttribute("aria-expanded", "false");
-    });
-  });
+// Анімація появи
+const elements = document.querySelectorAll(".fade-up");
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("show");
 }
+});
+});
 
-// Footer year
-const yearEl = document.getElementById("year");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+elements.forEach(el => observer.observe(el));
+
